@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script type="text/javascript">
+function myFunction()
+{
+var x="";
+var day=new Date().getDay();
+switch(day)
+ {
+  case 0:
+    x="Today is sunday!"
+    break;
+  case 1:
+    x="Today is monday!"
+    break;
+  case 2:
+    x="Today is tuesday!"
+    break;
+  case 3:
+    x="Today is wednesday!"
+    break;
+  case 4:
+    x="Today is thursday!" 
+    break;
+  case 5:
+    x="Today is friday!"
+    break;
+  case 6:
+    x="Today is saturday!"
+    break;
+  }
+ document.getElementById("demo").innerHTML=x;
+}
+ </script>
+
+ <p>点击按钮可以显示当天是星期几。</p>
+
+ <p id="demo"></p>
+
+ <button onclick="myFunction()">点击这里</button>
+
+ </body>
+ </html>            
+
+
+
+
+
+

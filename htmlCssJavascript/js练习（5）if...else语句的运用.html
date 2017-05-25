@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script type="text/javascript">
+function myFunction()
+{
+var x="";
+var time=new Date().getHours();
+if(time<20)
+  {
+  	x="Good day!";
+  }
+ else
+  {
+  	x="Good evening!";
+  }
+document.getElementById("demo").innerHTML=x; 
+}
+</script>
+
+<p>时间如果小于20；00，输出为Good day!  如果不是，输出为Good evening!</p>
+
+<p id="demo"></p>
+
+<button onclick="myFunction()">点击这里</button>
+
+</body>
+</html> 	
+
+
+
+
+
+

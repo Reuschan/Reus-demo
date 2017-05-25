@@ -1,0 +1,54 @@
+*{margin: 0;
+  padding: 0;	 
+} 
+
+li{list-style: none;
+
+}
+
+.container{width: 800px;
+	       margin: 0 auto;
+	       padding: 20px;	      
+	       
+}
+
+.container .item{margin-bottom: 20px;
+	             border:1px dotted red;
+	             padding: 20px;
+
+}
+.container .item h2{font-size: 16px;
+	                margin-bottom: 10px;
+	                border-bottom: 2px solid blue;
+
+}
+.container .item li{display: inline;
+	                margin-right: 17px;	                 
+}
+	                 
+.container .item img{width: 230px; 
+	                 height: 230px;
+	                 margin-bottom: 20px;
+	                 
+}
+
+.menu{position: fixed;
+	  top:100px;
+	  left:50%;
+	  margin-left: 400px;
+}
+
+.menu  ul li a{display:block;
+	           margin:5px 0;
+	           height:50px;
+	           width:80px;
+               font-size: 14px;
+               line-height: 50px;
+               color: blue;
+               text-align: center;
+               text-decoration:none;
+}
+
+.menu ul li a:hover, .menu ul li a.current{color: #fff;
+	                                       background: #0088bb;
+}         

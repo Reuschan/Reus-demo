@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <style type="text/css">
+  *{
+  	margin:0;
+  	padding:0:; 
+  }
+  ul li{
+  	list-style: none;
+  }
+  .container{
+  	width:30%;
+  	height:600px;
+  	overflow:hidden;
+  	margin:0 auto;
+  }
+  .container .header{
+    width:100%;
+    height:40px;
+    background-color:#000;
+    text-align: center;
+  }
+  .container .header h2{
+  	font-size: 16px;
+  	line-height: 40px;
+  	color:#fff;
+  }
+  .container .header .header-left{
+  	width:10px;
+  	height:10px;
+  	background-color: #000;
+  	border-top:2px solid #fff;
+  	border-left:2px solid #fff;
+  	float: left;
+  	position: relative;
+  	top:35%;
+  	left:6%;
+  	transform: rotate(-45deg);
+  }
+  .container .header .header-right{
+    width:20px;
+  	height:15px;
+  	background-color: #000;
+  	border-top:2px solid #fff;
+  	border-bottom:2px solid #fff;
+  	float: right;
+  	position: relative;
+  	top:-75%;
+  	right:6%;
+  }
+  .container .header .header-right .line{
+  	height:2px;
+  	overflow: hidden;
+  	background-color: #fff;
+  	margin-top: 30%;
+  }
+  .container .content{
+  	width:100%;
+  	height:400px;
+  	background-color: green;	
+  }
+  .container .footer{
+  	width:100%;
+  	height:30px;
+  	background-color: red;
+  	position: relative;
+  }
+  .container .footer ul{
+  	height:30px;
+  }
+  .container .footer ul li{
+  	float: left;
+  	font-size: 16px;
+  	font-weight: bold;
+  	color:#fff;
+  	line-height:30px;
+  	margin:0 22px;
+  	text-align: center;
+  }
+  .container .footer .box{
+  	width:80px;
+  	height:130px;
+  	position: absolute;
+  	top:-160px;
+  	left:120px;
+  	border:1px solid #fff;
+  	background-color: lightgray;
+  }
+  .container .footer .box:before{
+  	content: "";
+  	position: absolute;
+    bottom: -12%;
+    left: 50%;
+    z-index: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    background-color: inherit;
+    transform: translate(-50%, -86%) rotate(230deg); 
+  }
+
+
+  </style>
+</head>
+
+
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="header-left"></div>
+      <h2>WEBAPP</h2>
+      <div class="header-right">
+        <div class="line"></div>
+      </div>
+    </div>
+    
+    <div class="content"></div>
+    
+    <div class="footer">
+      <ul>
+        <li>首页</li>
+        <li>新闻
+          <div class="box">
+            <p>我的新闻</p>
+            <p>我的新闻</p>
+            <p>我的新闻</p>
+            <p>我的新闻</p>
+          </div>
+        </li>
+        <li>公告</li>
+        <li>关于</li>
+      </ul>
+    </div>
+
+    
+
+  </div>
+
+
+
+</body>
+</html>

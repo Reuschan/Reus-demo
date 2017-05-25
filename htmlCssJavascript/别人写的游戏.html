@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>你追我赶好欢喜</title>
+<script src="js/jquery-2.2.0.min.js"></script>
+<style>
+*{ margin:0; padding:0; }
+#main{ width:631px; height:631px; position:relative; float:left;  }
+#main div{ position:absolute; width:20px; height:20px; background:#0CF; }
+#main span{ width:20px; height:20px; background:#F00; position:absolute; display:block; }
+#chess{ width:630px; height:630px; border:1px solid #000; border-bottom:none; border-right:none; position:relative; }
+#chess li{ width:20px; height:20px; border-right:1px solid #000; border-bottom:1px solid #000; float:left; list-style:none; }
+#sore{ float:left; margin-left:30px; line-height:30px; padding:20px; background:#FFC; }
+#sore strong{ color:#C00; }
+#level { height:20px; width:200px; border:1px solid red; }
+#level strong{ display:block; height:20px; width:20px;; background:#F00;  }
+</style>
+</head>
+<body>
+<div id="main">
+		<ul id="chess"></ul>
+</div>
+<div id="sore">
+	<p>↑→↓←四个键控制移动，开始游戏吧！</p>
+    难度：<p id="level"><strong id="per"></strong></p>
+    <p>您的得分：<strong id="num"> 0</strong></p>
+</div>
+
+<script>
+var arr = [];	
+var l =0;
+var t = 0;
+var keyPrev = 0;
+var timer = null;
+var iNow = 0;
+var time = 200;
+function createChess(){
+	for(var i=0; i<900; i++){
+		$('<li>').appendTo($('#chess'));
+		}
+	}
+createChess();
+
+function snakeStart(){
+	for(var i=0; i<5; i++){
+		$('<div style="left:'+ (21*i+106) +'px; top:106px;"></div>').appendTo($('#main'));
+		}	
+	for(var i=0; i<$('#main').find('div').length; i++){
+		arr.push([$('#main').find('div').eq(i).offset().left,$('#main').find('div').eq(i).offset().top])
+		}
+	$('#main').find('div').last().css('background','black');	
+	}
+snakeStart();
+
+function randFood(){
+	l = Math.floor(Math.random()*30)*21+1;
+	t = Math.floor(Math.random()*30)*21+1;
+	$('<span style="left:'+l+'px; top:'+t+'px">').appendTo($('#main'));
+	}
+randFood();
+
+function addSnake(){
+	if(arr[arr.length-1][1]==t&&arr[arr.length-1][0]==l){
+		iNow++;
+		time -= 15;
+		$('#num').html(' '+iNow);
+		$('#per').css('width',20+iNow*5);
+		$('<div style="left:'+arr[0][0]+'px; top:'+arr[0][1]+'px">').prependTo($('#main'));
+		arr.unshift([arr[0][0],arr[0][1]]);
+		console.log(arr);
+		$('span').remove();
+		randFood();
+		}			
+	}
+
+function ifChase(){
+	for(var i=0; i<arr.length-1; i++){
+		
+		if((arr[i][0]==arr[arr.length-1][0]&&arr[i][1]==arr[arr.length-1][1])||arr[arr.length-1][0]<0||arr[arr.length-1][0]>630||arr[arr.length-1][1]<0||arr[arr.length-1][1]>630){
+			alert('GAME OVER!');
+			document.location.reload();
+			return;
+			}
+		}
+	}
+
+
+function move(j,speed){
+	clearInterval(timer);
+	timer = setInterval(function(){
+		for(var i=0; i<arr.length-1; i++){
+			arr[i][0] = arr[i+1][0];
+			arr[i][1] = arr[i+1][1];
+			}
+		arr[arr.length-1][j]+=speed;
+		ifChase();
+		for(var i=0; i<arr.length; i++){
+			$('#main').find('div').eq(i).css('left',arr[i][0]);
+			$('#main').find('div').eq(i).css('top',arr[i][1]);
+			}
+		addSnake();	
+		},time)		
+	
+	}
+	
+function keyDown(){
+
+	$(document).keydown(function(ev){
+		
+		if(ev.which == 40){
+			if(keyPrev!=38){
+				move(1,21);					
+				}
+			}
+	
+		if(ev.which == 38){
+			if(keyPrev!=40){
+				move(1,-21);						
+				}
+			}
+	
+		if(ev.which == 39){
+			if(keyPrev!=37){
+				move(0,21);							
+				}
+			}
+	
+		if(ev.which == 37){
+			if(keyPrev!=39){
+				move(0,-21);						
+				}
+			}
+		keyPrev = ev.which;
+		})	
+	}
+keyDown();
+
+</script>
+</body>
+</html>

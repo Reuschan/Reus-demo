@@ -1,0 +1,43 @@
+<!Doctype html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  
+  <body>
+
+     <script type="text/javascript">
+      
+      /*解释闭包*/
+      	/*for(var i=0; i<=3; i++){
+      	(function(i){setTimeout(function(){
+      			console.log(i);
+      		},0);
+      	
+           })(i);    	  
+      	}*/
+      
+    /*随机取10-100的十个数字，存入数组，并排序*/
+    var iArray = [];  
+    function getRandom(istart, iend) {  
+    var iChoice = iend - istart + 1;  
+    return Math.floor(Math.random() * iChoice + istart);  
+}  
+    for (var i = 0; i < 10; i++) {  
+      iArray.push(getRandom(10, 100));  
+}   
+    /*a-b为正序，b-a为反序*/
+    iArray.sort(function compare(a,b){return a-b;});
+    for (var j = 0; j<iArray.length; j++){
+    	console.log(iArray[j]);
+    }
+
+     </script>
+    
+    
+
+  </body>
+
+
+  </html>  

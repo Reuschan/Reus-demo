@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* css document */
+
+body,figure,figcaption,h2,p,img{
+	margin: 0;
+	padding: 0;
+}
+figure{
+	width: 33.33%;
+	height: 320px;
+	overflow: hidden;
+	float:left;
+	position: relative;	
+}
+figure figcaption{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+	font-family: "微软雅黑";
+}
+figure figcaption h2{
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s; /*Firefox 4*/
+	-webkit-transition: all 0.3s ease 0s; /*Safari and Chrome*/
+}
+figure figcaption p{
+	transition: all 0.6s ease 0s;
+	-moz-transition: all 0.6s ease 0s; /*Firefox 4*/
+	-webkit-transition: all 0.6s ease 0s; /*Safari and Chrome*/
+}
+
+@media screen and (max-width: 600px){
+	figure{
+		width: 100%;
+	}
+}
+@media screen and (min-width: 601px) and (max-width: 1000px){
+	figure{
+		width: 50%;
+	}
+}
+@media screen and (min-width: 1001px){
+	figure{
+		width: 33.33%;
+	}
+}
+
+
+/*平移动画特效*/
+.spe1 figcaption h2{
+	margin-top: 10%;
+    transform: translate(-160px,0);  
+    -ms-transform: translate(-160px,0); /*IE9*/
+    -moz-transform: translate(-160px,0); /*Firefox*/
+    -webkit-transform: translate(-160px,0); /*Safari and Chrome*/
+}
+.spe1 figcaption p{
+	margin-top: 15%;
+	transform: translate(-160px,0);
+	-ms-transform: translate(-160px,0); /*IE9*/
+    -moz-transform: translate(-160px,0); /*Firefox*/
+    -webkit-transform: translate(-160px,0); /*Safari and Chrome*/
+
+}
+.spe1{background: #ffc0cb;}
+.spe1:hover img{
+	opacity: 0.5;
+}
+.spe1:hover figcaption h2{
+	transform: translate(0,0);
+	-ms-transform: translate(0,0); /*IE9*/
+    -moz-transform: translate(0,0); /*Firefox*/
+    -webkit-transform: translate(0,0); /*Safari and Chrome*/
+}
+.spe1:hover figcaption p{
+	transform: translate(0,0);
+	-ms-transform: translate(0,0); /*IE9*/
+    -moz-transform: translate(0,0); /*Firefox*/
+    -webkit-transform: translate(0,0); /*Safari and Chrome*/
+}	
+
+
+
+/*旋转动画特效*/
+.spe2 figcaption h2{
+	margin-top: 50%;
+	margin-left: 10%;
+	transform: translate(0,-300px) rotate(0deg);
+	-ms-transform: translate(0,-300px) rotate(0deg); /*IE9*/
+    -moz-transform: translate(0,-300px) rotate(0deg); /*Firefox*/
+    -webkit-transform: translate(0,-300px) rotate(0deg); /*Safari and Chrome*/
+}
+.spe2 figcaption p{
+	margin-left: 10%;
+	margin-top: 10%;
+	transform: translate(0,-300px) rotate(0deg);
+	-ms-transform: translate(0,-300px) rotate(0deg); /*IE9*/
+    -moz-transform: translate(0,-300px) rotate(0deg); /*Firefox*/
+    -webkit-transform: translate(0,-300px) rotate(0deg); /*Safari and Chrome*/
+}
+.spe2{
+	background: #ff4500;
+}
+.spe2:hover img{
+	opacity: 0.5;
+}
+.spe2:hover figcaption h2{
+	transform: translate(0,0) rotate(360deg);
+	-ms-transform: translate(0,0) rotate(360deg); /*IE9*/
+    -moz-transform: translate(0,0) rotate(360deg); /*Firefox*/
+    -webkit-transform: translate(0,0) rotate(360deg); /*Safari and Chrome*/
+
+}
+.spe2:hover figcaption p{
+	transform: translate(0,0) rotate(360deg);
+	-ms-transform: translate(0,0) rotate(360deg); /*IE9*/
+    -moz-transform: translate(0,0) rotate(360deg); /*Firefox*/
+    -webkit-transform: translate(0,0) rotate(360deg); /*Safari and Chrome*/
+
+}
+
+
+/*斜切动画特效*/
+.spe3 figcaption h2{
+	margin-top: 80%;
+	margin-left: 10%;
+	transform: skew(90deg);
+	-ms-transform: skew(90deg); /*IE9*/
+    -moz-transform: skew(90deg); /*Firefox*/
+    -webkit-transform: skew(90deg); /*Safari and Chrome*/
+}
+.spe3 figcaption p{
+	margin-top: 10%;
+	margin-left: 10%;
+	transform: skew(90deg);
+	-ms-transform: skew(90deg); /*IE9*/
+    -moz-transform: skew(90deg); /*Firefox*/
+    -webkit-transform: skew(90deg); /*Safari and Chrome*/
+}
+.spe3{
+	background: #bc8f8f;
+}
+.spe3:hover img{
+	opacity: 0.5;
+}
+.spe3:hover figcaption h2{
+	transform: skew(0deg);
+	-ms-transform: skew(0deg); /*IE9*/
+    -moz-transform: skew(0deg); /*Firefox*/
+    -webkit-transform: skew(0deg); /*Safari and Chrome*/
+}
+.spe3:hover figcaption p{
+	transform: skew(0deg);
+	-ms-transform: skew(0deg); /*IE9*/
+    -moz-transform: skew(0deg); /*Firefox*/
+    -webkit-transform: skew(0deg); /*Safari and Chrome*/
+}

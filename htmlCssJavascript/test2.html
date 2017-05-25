@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+  
+<body>
+  <h2>点击以下三个li，输出分别是什么？</h2>
+  <ul>
+    <li>item 0</li>
+    <li>item 1</li>
+    <li>item 2</li>
+  </ul>
+<input type="button" value="按钮" id="btn1">
+<script>
+"use strict";
+
+var lis=document.getElementsByTagName('li');
+
+for(let i=0; i<lis.length; i++){
+	
+
+	lis[i].onclick=function(event){
+		
+		console.log('你点击了' + i);
+	}
+	
+}
+
+</script>
+
+</body>
+</html>

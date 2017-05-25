@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>数组去重</title>
+     <meta charset="UTF-8">
+</head>      
+<body>
+
+<script type="text/javascript">
+Array.prototype.unique=function() {
+	var res=[];  //创建一个新数组存放结果
+	var json={}; //创建一个空对象
+	for(var i=0; i<this.length; i++){//遍历要去重的数组
+		if(!json[this[i]]){         //每次取出一个元素与对象进行对比
+			res.push(this[i]);     //如果不重复,则把它存放到res中
+			json[this[i]]=1;      //同时把这个元素的内容作为对象的一
+		}                        //个属性，并赋值为1,存放到json中
+	}
+	return res;
+}
+
+var arr=[112,112,34,'你好',112,112,34,'你好','str','str1'];
+alert(arr.unique());
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+/*txt1="what a very";
+txt2="nice day!"
+txt3=txt1+" "+txt2;
+
+document.write(txt3);*/
+
+/*var d=new Date();
+d.setFullYear(2016,6,28);
+document.write(d);*/
+
+
+
+
+//显示浏览器内部窗口的宽度和高度。
+
+var w=window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var h=window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+
+x=document.getElementById("demo");
+x.innerHTML="浏览器的内部窗口宽度：" + w + "，高度：" + h + "。"
+</script>
+
+</body>
+</html>
+

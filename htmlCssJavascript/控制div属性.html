@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+#block{width:100px;height:100px;margin:20px auto;background-color:black;}
+</style>
+
+<script type="text/javascript">
+//改变宽度函数：
+
+function changeWidth()
+{
+	var obj=document.getElementById("block"); 
+	obj.style.width="300px";
+}
+
+//改变高度函数：
+
+function changeHeight()
+{
+	var obj=document.getElementById("block");
+	obj.style.height="300px";
+}
+
+//改变颜色函数：
+
+function changeColor()
+{
+	var obj=document.getElementById("block");
+	obj.style.backgroundColor="red";
+}
+
+//隐藏函数；
+
+function hide()
+{
+	var obj=document.getElementById("block");
+	obj.style.display="none";
+}
+
+
+//重置函数：
+
+function offset()
+{
+	var obj=document.getElementById("block");
+	var message=confirm("你确定要重置吗？");
+	if(message==true)
+	{
+		obj.removeAttribute("style");
+	} 
+}
+</script>
+</head>
+
+<body>
+
+<center><form class="form">
+<input type="button" value="变宽" onclick="changeWidth()">
+<input type="button" value="变高" onclick="changeHeight()">
+<input type="button" value="变色" onclick="changeColor()">
+<input type="button" value="隐藏" onclick="hide()">
+<input type="button" value="重置" onclick="offset()">
+</form></center>
+
+<div id="block"></div>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+

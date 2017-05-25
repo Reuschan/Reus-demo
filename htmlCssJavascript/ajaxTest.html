@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meat charset="UTF-8">
+  <style>
+    .box{
+    	width:500px;
+    	height:300px;
+    	border:1px solid red;
+    	margin:20px auto;
+    	text-align: center;
+    	display:none;
+    }
+    .btn{
+          width:100px;
+          height:30px;
+          margin:10px auto;
+          display:block;
+    }
+      
+  </style>
+  <script src="js/jquery-2.2.0.min.js"></script>
+    }
+    
+</head>
+
+
+<body>
+  <div class="box"></div>
+
+  <form>
+  <input type="button" value="click me" class="btn">
+  </form>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  	$(".btn").click(function(){
+  		$(".box").css("display","block").load("js/test.txt",function(resposeTxt,statusTxt,xhr){
+  			if(statusTxt==="success")
+  				alert("外部文件加载成功");
+  			if(statusTxt==="error")
+  				alert("Error: "+xhr.status+", "+xhr.statusTxt);
+  		});
+  	});
+  })
+</script>
+</body>
+</html>

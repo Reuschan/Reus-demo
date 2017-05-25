@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>表情帝的世界</title>
+<style>
+*{ margin:0; padding:0; }
+#container{ width:800px; margin:100px auto; position:relative; }
+h1{ font-size:28px; line-height:40px; text-align:center; }
+#infor{ font-size:16px; line-height:30px; text-align:center; }
+button{ display:block; width:74px; height:24px; margin:10px auto; }
+#screen{ width:798px; height:450px; border:1px solid #000; position:absolute; top:120px; left:0; }
+#score{ width:150px; height:80px; border:1px solid #999; background:#ffffcc; position:absolute; top:120px; left:840px; }
+#score p{ font-size:20px; font-weight:bold;  margin:10px; }
+.drop{ width:24px; height:24px; top:120px; position:absolute; }
+</style>
+<script src="js/miaov.js"></script>
+<script>
+window.onload = function(){
+	var oContainer = document.getElementById('container');
+	var oBtn = document.getElementsByTagName('button');
+	var oScreen = document.getElementById('screen');
+	var oGet = document.getElementById('score').getElementsByTagName('P')[0].getElementsByTagName('span')[0];
+	var oLost = document.getElementById('score').getElementsByTagName('P')[1].getElementsByTagName('span')[0];
+	var iSpeed = 1;
+	var lost = 0;
+	var get = 0;
+	
+	function Drop(){
+		
+		var oDrop  = document.createElement('div');
+		oDrop.className = 'drop';
+		oContainer.appendChild(oDrop);
+		
+		var left =Math.round( Math.random()*600 + 100 );
+		var num =Math.ceil( Math.random()*10 );
+		oDrop.style.left = left + 'px';
+		oDrop.style.background = 'url(img/'+ num +'.png)';
+		
+		doMove ( oDrop, 'top', iSpeed, 546, function(){
+			lost++;
+			oLost.innerHTML = ' ' + lost;
+			oDrop.style.display = 'none';
+			if( lost==10){
+				alert('再来一次吧！');
+				oBtn[1].style.display = 'none';
+				oBtn[0].style.display = 'block';
+				return;
+				}	
+			shake( oScreen, 'top'); 
+			setTimeout(Drop,1000);
+			} );
+		
+		oDrop.onclick = function(){
+			get++;
+			oGet.innerHTML = ' ' + get;
+			iSpeed = iSpeed + 1;
+			var _this = this;
+			this.style.background = 'url(img/qq.png)';
+			clearInterval(this.timer);
+			shake ( this, 'left', function(){
+				_this.style.display = 'none';
+				Drop();
+				})
+			} 
+		}
+	oBtn[0].onclick = function(){
+		iSpeed = 1;
+		lost = 0;
+		get = 0;
+		oGet.innerHTML = ' ' + 0;
+		oLost.innerHTML = ' ' + 0;
+		this.style.display = 'none';
+		oBtn[1].style.display = 'block';
+		Drop();
+		}
+	}
+</script>
+</head>
+
+<body>
+<div id="container">
+      <h1>鼠标高手</h1>
+      <p id="infor">游戏说明：点击“开始游戏”，随机掉下QQ表情，点中它，千万别让它掉下去！！</p>
+      <button>开始游戏</button>
+      <button style="display:none" disabled="disabled">游戏进行中</button>
+      <div id="screen"></div>            
+      <div id="score">
+          <p>得分:<span> 0</span> 分</p>
+          <p>失分:<span> 0</span> 分</p>
+      </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style type="text/css">
+    .test{
+    	width:0;
+    	height:0;
+    	border-right:10px solid #c33;
+    	border-top:10px solid transparent;
+    	border-bottom:10px solid transparent;
+    }
+    body {
+        background-color: #666;
+    }
+    .fuck-ie {
+        width: 100px;
+        border: 1px solid #fff;
+        margin: 50px auto;
+        padding: 0;
+        color: #fff;
+        background-color: #1d1f20;
+        position: relative;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+  .fuck-ie:before {
+        content: "";
+        bottom: -12%;
+        left: 50%;
+        z-index: 0;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #fff;
+        border-left: 1px solid #fff;
+        border-top-left-radius: 4px;
+        background-color: inherit;
+        transform: translate(-50%, -72%) rotate(230deg);
+        position: absolute;
+    }
+    li {
+      z-index: 1;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+    }  
+    li:hover {
+      background-color: #666;
+    }
+    .content, .content1{
+      width:100px;
+      height:24px;
+      border:1px solid red;
+      border-radius: 10px;
+      text-align: center;
+      margin:20px 0;
+    }
+    .content a, .content1 a{
+      text-decoration:none;
+      color:#fff;
+      font-weight: bold;
+      line-height: 24px;
+    }
+    .box{
+    	width:200px;
+    	height:200px;
+    	border:1px solid red;
+    	margin:20px auto;
+    	text-align: center;
+    	display:none;
+    }
+    
+
+
+
+  </style>    
+</head>
+
+<body>
+<div class="test"></div>
+<ul class="fuck-ie">
+    <li>fuck ie</li>
+    <li>fuck ie</li>
+    <li>fuck ie</li>
+    <li>fuck ie</li>
+</ul>
+
+<div class="content">
+  <a href="javascript:;">点我一下</a>
+</div>
+<div class="content1">
+  <a href="javascript:;">点我一下</a>
+</div>
+<div class="box">
+    <h2>我是一个弹框</h2>
+    <p>我是弹框里面的内容</p>
+</div>
+
+<script>
+//console.log(typeof null,null instanceof Object);
+//var val ='smtg';
+//console.log('value is'+(val==='smtg')?'something':'nothing');
+var open=document.querySelector(".content");
+var box=document.querySelector(".box");
+open.addEventListener("click",function(){
+	
+    if(box.style.display==="block"){
+    	box.style.display="none";
+    }else{
+    	box.style.display="block";
+    }
+});
+
+var open1=document.querySelector(".content1");
+open1.addEventListener("click",function(){
+	alert("我是另一个弹框")
+})
+
+
+
+</script>
+
+</body>
+</html>

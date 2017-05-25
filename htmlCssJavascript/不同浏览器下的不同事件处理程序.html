@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <ul id="btn1">
+    <li>项目一</li>
+    <li>项目二</li>
+    <li>项目三</li>
+    <li>项目四</li>
+    <li>项目五</li>
+    <li>项目六</li>
+  </ul> 
+  
+
+
+<script type="text/javascript">
+    //利用事件冒泡实现事件委托
+    function mes(event){
+    	//alert("欢迎来到地球村！")
+        event = event || window.event;
+
+        console.log(event.target || event.srcElement);
+    };
+
+    var btn1=document.getElementById("btn1");
+    
+    //创建一个新对象，增加添加和删除事件的方法
+    var Handle={
+    	//添加事件（包括Dom0级和Dom2级事件处理程序）
+    	addHandle:function(element,type,handle){
+    		if(element.addEventListener){
+    			element.addEventListener(type,handle,false);
+    		}else if(element.attachEvent){
+    			//兼容IE低版本浏览器，添加的事件要加 on
+    			element.attachEvent("on"+type,handle);  
+    		}else{
+    			element["on"+type]=handle;
+
+    		}
+    	},
+
+    	//删除事件
+    	removeHandle:function(element,type,handle){
+    		if(element.removeEventListener){
+    			element.removeEventListener(type,handle,false);
+    		}else if(element.detachEvent){
+    			element.detachEvent(type,handle);
+    		}else{
+    			element["on"+type]=null;
+
+    		}
+    	}
+    }
+
+    Handle.addHandle(btn1,"click",mes);
+
+</script>
+
+
+</body>
+</html>  

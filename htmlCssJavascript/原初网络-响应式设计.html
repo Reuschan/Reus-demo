@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width,initial-scale=1,maximum-scale=1">
+	<link rel="shortcut icon" href="images/yc/logos.png" type="image/x-icon"/> 
+	<title>Intrue</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<!-- 顶部导航条 -->
+	<nav class="mainnav navbar-fixed-top">
+		<div class="container">
+			<div class="navbar" role="nevigation">
+				<div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 logoplace">
+					<a href="#" class="logo"><img class="img-responsive" src="images/yc/logo.png"></a>
+				</div>
+				<button type="button" class="mainnav-toggle btn btn-default hidden-md hidden-lg">
+					<span class="glyphicon glyphicon-star"></span>
+				</button>
+				<!-- 导航具体内容，以后会增加内容 -->
+				<div class="navbar-left" id="mainnav-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+					</ul>
+				</div>
+				<!-- 搜索框和按钮，当搜索框中的value值为空时，阻止提交表单 -->
+				<form class=" navbar-right navbar-search" onsubmit="return check();">
+					<div class="form-group">
+						<button id="search-botton" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+						<input type="text" class="mainnav-search" placeholder="管理系统开发">
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<!-- nav浮动之后占位 -->
+	<div class="nav-position"></div>
+	<!-- banner轮播图 -->
+	<div id="main-carousel" class="carousel slide" data-ride="carousel">
+		<!-- 底部小圆点 -->
+		<ol class="carousel-indicators">
+			<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#main-carousel" data-slide-to="1"></li>
+		</ol>
+		<!-- 轮播图 -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<div class="banner1 banner">
+					<h3>IDC数据中心机房整体建设方案</h3>
+					<p class="hidden-xs">供电&amp;UPS系统、防雷防静电系统、新风系统、环境监控系统、空调系统、布线系统、门禁监控系统、消防系统、照明系统、机房装修...</p>
+					<button>了解更多</button>
+				</div>
+			</div>
+			<div class="item">
+				<div class="banner2 banner">
+					<h3>元初网络构筑专家网络一站式解决方案提供商</h3>
+					<p class="hidden-xs">网络，信息化高速公路，堵不堵让我们告诉你如何构建快速、稳定、安全的企业局域网</p>
+					<button>了解更多</button>
+				</div>
+			</div>
+		</div>
+		<!-- 左右控制滚动 -->
+		<a class="left carousel-control" href="#main-carousel" role="buttton" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#main-carousel" role="buttton" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+	<!-- 快速通道 -->
+	<div class="fast-track">
+		<div class="container">
+			<!-- 标题 -->
+			<div class="row">
+				<h3 class="col-xs-12 title">快速通道</h3>
+			</div>
+			<div class="row">
+				<div class="col-md-2 col-xs-4 fast-Cloud fast-item">
+					<span class="fast-icon"><span class="icon-wrap"><img src="images/yc/icon-k1.svg"></span></span>
+					<h4>云计算</h4>
+					<p class="hidden-xs hidden-sm">Cloud Computing</p>
+				</div>
+				<div class="col-md-2 col-xs-4 fast-Safety fast-item">
+					<span class="fast-icon"><span class="icon-wrap"><img src="images/yc/icon-k2.svg"></span></span>
+					<h4>信息安全</h4>
+					<p class="hidden-xs hidden-sm">Information Safety</p>
+				</div>
+				<div class="col-md-2 col-xs-4 fast-Network fast-item">
+					<span class="fast-icon"><span class="icon-wrap"><img src="images/yc/icon-k3.svg"></span></span>
+					<h4>无线覆盖</h4>
+					<p class="hidden-xs hidden-sm">Wireless Network</p>
+				</div>
+				<div class="col-md-2 col-xs-4 fast-IDC fast-item">
+					<span class="fast-icon"><span class="icon-wrap"><img src="images/yc/icon-k4.svg"></span></span>
+					<h4>IDC</h4>
+					<p class="hidden-xs hidden-sm">Internet Data Center</p>
+				</div>
+				<div class="col-md-2 col-xs-4 fast-Factory fast-item">
+					<span class="fast-icon"><span class="icon-wrap"><img src="images/yc/icon-k5.svg"></span></span>
+					<h4>智慧工厂</h4>
+					<p class="hidden-xs hidden-sm">Wisdom Factory</p>
+				</div>
+				<div class="col-md-2 col-xs-4 fast-System fast-item">
+					<span class="fast-icon"><span class="icon-wrap"><img src="images/yc/icon-k6.svg"></span></span>
+					<h4>管理系统</h4>
+					<p class="hidden-xs hidden-sm">Management System</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="industry-solution">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 industry-solition-item">
+					<div class="col-xs-6 col-sm-12 img-wrap"><img src="images/yc/industry1.jpg" class="img-responsive"></div>
+					<div class="text-wrap">
+						<h4>教育行业解决方案</h4>
+						<p>这是解说文字，这是解说文字，这是解说文字，这是解说文字</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 industry-solition-item">
+					<div class="col-xs-6 col-sm-12 img-wrap"><img src="images/yc/industry2.jpg" class="img-responsive"></div>
+					<div class="text-wrap">
+						<h4>医疗行业解决方案</h4>
+						<p>这是解说文字，这是解说文字，这是解说文字，这是解说文字</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 industry-solition-item">
+					<div class="col-xs-6 col-sm-12 img-wrap"><img src="images/yc/industry3.jpg" class="img-responsive"></div>
+					<div class="text-wrap">
+						<h4>IT行业解决方案</h4>
+						<p>这是解说文字，这是解说文字，这是解说文字，这是解说文字</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="latest-program">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-sm-4 latest-program-item">
+					<div class="img-wrap">
+						<img src="images/yc/latest program-1.jpg" class="img-responsive hidden-xs">
+						<img src="images/yc/latest program-01.jpg" class="img-responsive hidden-md hidden-sm hidden-lg">
+						<div class="mask"></div>
+						<h4 class="latest-program-title hidden-xs">超融合架构解决方案</h4>
+						<div class="latest-program-contain hidden-xs">
+							<h4>超融合架构解决方案</h4>
+							<p>解决方案解决方案解决方案解决方案解决方案</p>
+						</div>
+					</div>
+					<div class="latest-program-contain hidden-lg hidden-md hidden-sm">
+						<h4>超融合架构解决方案</h4>
+						<p>解决方案解决方案解决方案解决方案解决方案</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 latest-program-item">
+					<div class="img-wrap">
+						<img src="images/yc/latest program-2.jpg" class="img-responsive hidden-xs">
+						<img src="images/yc/latest program-02.jpg" class="img-responsive hidden-md hidden-sm hidden-lg">
+						<div class="mask"></div>
+						<h4 class="latest-program-title hidden-xs">超融合架构解决方案</h4>
+						<div class="latest-program-contain hidden-xs">
+							<h4>超融合架构解决方案</h4>
+							<p>解决方案解决方案解决方案解决方案解决方案</p>
+						</div>
+					</div>
+					<div class="latest-program-contain hidden-lg hidden-md hidden-sm">
+						<h4>超融合架构解决方案</h4>
+						<p>解决方案解决方案解决方案解决方案解决方案</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 latest-program-item">
+					<div class="img-wrap">
+						<img src="images/yc/latest program-3.jpg" class="img-responsive hidden-xs">
+						<img src="images/yc/latest program-03.jpg" class="img-responsive hidden-md hidden-sm hidden-lg">
+						<div class="mask"></div>
+						<h4 class="latest-program-title hidden-xs">超融合架构解决方案</h4>
+						<div class="latest-program-contain hidden-xs">
+							<h4>超融合架构解决方案</h4>
+							<p>解决方案解决方案解决方案解决方案解决方案</p>
+						</div>
+					</div>
+					<div class="latest-program-contain hidden-lg hidden-md hidden-sm">
+						<h4>超融合架构解决方案</h4>
+						<p>解决方案解决方案解决方案解决方案解决方案</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 latest-program-item">
+					<div class="img-wrap">
+						<img src="images/yc/latest program-4.jpg" class="img-responsive hidden-xs">
+						<img src="images/yc/latest program-04.jpg" class="img-responsive hidden-md hidden-sm hidden-lg">
+						<div class="mask"></div>
+						<h4 class="latest-program-title hidden-xs">超融合架构解决方案</h4>
+						<div class="latest-program-contain hidden-xs">
+							<h4>超融合架构解决方案</h4>
+							<p>解决方案解决方案解决方案解决方案解决方案</p>
+						</div>
+					</div>
+					<div class="latest-program-contain hidden-lg hidden-md hidden-sm">
+						<h4>超融合架构解决方案</h4>
+						<p>解决方案解决方案解决方案解决方案解决方案</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 latest-program-item">
+					<div class="img-wrap">
+						<img src="images/yc/latest program-5.jpg" class="img-responsive hidden-xs">
+						<img src="images/yc/latest program-05.jpg" class="img-responsive hidden-md hidden-sm hidden-lg">
+						<div class="mask"></div>
+						<h4 class="latest-program-title hidden-xs">超融合架构解决方案</h4>
+						<div class="latest-program-contain hidden-xs">
+							<h4>超融合架构解决方案</h4>
+							<p>解决方案解决方案解决方案解决方案解决方案</p>
+						</div>
+					</div>
+					<div class="latest-program-contain hidden-lg hidden-md hidden-sm">
+						<h4>超融合架构解决方案</h4>
+						<p>解决方案解决方案解决方案解决方案解决方案</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 latest-program-item">
+					<div class="img-wrap">
+						<img src="images/yc/latest program-6.jpg" class="img-responsive">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="partner">
+		<div class="container">
+			<div class="row">
+				<h3 class="col-xs-12 title">合作伙伴</h3>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner1.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner2.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner3.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner4.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner5.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner6.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner7.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner8.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner9.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner10.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner11.jpg" class="img-responsive">
+				</div>
+				<div class="col-xs-3 col-md-2 partner-item">
+					<img src="images/yc/partner1.jpg" class="img-responsive" style="opacity:0;">
+					<a href="#" class="partner-more">更多合作伙伴</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="advantage">
+		<div class="container">
+			<div class="row">
+				<h3 class="col-xs-12 title">元初优势</h3>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-xs-6 advantage-item">
+					<div class="advantage-contain">
+						<span class="advantage-icon advantage-icon1"></span>
+						<div class="text-wrap">
+							<h4>优秀的技术团队</h4>
+							<p>强大的技术支持,从事多年软件开发，系统开发，网络综合诊断，信息安全评估，拥有多个开发基地和实验中心</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-6 advantage-item">
+					<div class="advantage-contain">
+						<span class="advantage-icon advantage-icon2"></span>
+						<div class="text-wrap">
+							<h4>优秀的技术团队</h4>
+							<p>强大的技术支持,从事多年软件开发，系统开发，网络综合诊断，信息安全评估，拥有多个开发基地和实验中心</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-6 advantage-item">
+					<div class="advantage-contain">
+						<span class="advantage-icon advantage-icon3"></span>
+						<div class="text-wrap">
+							<h4>优秀的技术团队</h4>
+							<p>强大的技术支持,从事多年软件开发，系统开发，网络综合诊断，信息安全评估，拥有多个开发基地和实验中心</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-6 advantage-item no-line">
+					<div class="advantage-contain">
+						<span class="advantage-icon advantage-icon4"></span>
+						<div class="text-wrap">
+							<h4>优秀的技术团队</h4>
+							<p>强大的技术支持,从事多年软件开发，系统开发，网络综合诊断，信息安全评估，拥有多个开发基地和实验中心</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12 contact-item">
+					<span class="email-icon"></span>
+					<p>邮箱: intrue@intrue.com.cn</p>
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 contact-item">
+					<span class="phone-icon"></span>
+					<ul>
+						<li>惠州: 0752－2022110</li>
+						<li>惠州: 0752－2022110</li>
+						<li>惠州: 0752－2022110</li>
+						<li>惠州: 0752－2022110</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="map hidden-xs hidden-sm">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">解决方案&amp;产品</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">合作伙伴</a></li>
+						<li><a href="#">关于元初</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<p>© 2010 By Intrue Network Inc.InTrue Network Inc.All rights reserved</p>
+			<p>Exceed Expectation</p>
+		</div>
+	</footer>
+
+
+
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			/*点击搜索按钮，如果value为空就切换输入框显示隐藏*/
+			$('#search-botton').click(function(){
+				var n = $('.mainnav-search').val().length;
+				if(n==0){
+					$('.mainnav-search').toggleClass('show');
+				}
+			});
+			$('.mainnav-toggle').click(function(){
+				$('#mainnav-collapse').slideToggle();
+			});
+			/*表单验证*/
+		});
+		function check(){
+			var n = $('.mainnav-search').val().length;
+			if(n==0){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+	</script>
+</body>
+</html>

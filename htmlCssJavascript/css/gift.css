@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+*{margin: 0;
+  padding: 0;
+}
+
+.title{width: 400px;
+       height: 60px;
+       margin: 0 auto;
+       font-size: 24px;
+       color: #f00;
+       font-weight: bold;
+       text-align: center;
+       margin-top: 20px;
+}
+
+.btns{width: 400px;
+      height: 80px;
+      margin: 0 auto;
+      font-size: 24px;
+      color: #0f0;
+      line-height: 24px;
+      text-align: center;
+      
+}
+.btns span{background-color: #f00;
+           border-radius: 10px;
+           cursor: pointer; 
+}

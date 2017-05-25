@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script type="text/javascript">
+function myFunction()
+{
+var x="";
+var time=new Date().getHours();
+ if(time<10)
+   {
+   	x="Good morning!";
+   }
+  else if(time<20)
+   {
+  	x="Good day!";
+   }
+  else
+   {
+   	x="Good evening!"; 
+   }
+document.getElementById("demo").innerHTML=x;    
+}
+</script>
+
+<p>如果时间早于10；00，会获得问候Good morning;如果时间早于20:00,会获得问候Good day;如果前面两项都不满足，则会获得问候Good evening。</p>
+
+<p id="demo"></p>
+
+<button onclick="myFunction()">点击这里</button>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
