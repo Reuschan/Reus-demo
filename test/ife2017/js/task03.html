@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>95</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+<script type="text/javascript">
+
+/*获取数据*/
+function getData() {
+  var source=document.querySelectorAll("#source>li");
+  var data=[];
+  for(var i=0; i<source.length; i++){
+    var text=source[i].innerText;
+    //text.substr(0,7)表示从text中第一个字符开始取，取七个字符。
+    //text.substr(-2,2)表示从text中倒数第二个字符开始取，取两个字符。
+    var node=[text.substr(0,7), text.substr(-2,2)];
+    data.push(node);
+  };
+  return data;  
+};
+
+/*排序*/
+function sortData(data){
+  data.sort(function(a,b){return b[1]-a[1]});
+  return data;
+};
+
+/*把处理好的数据渲染在列表里*/
+function render(data){
+  var resort=document.querySelector("#resort");
+  for(var i=0; i<data.length; i++){
+    var lis=document.createElement("li");
+    var bs=document.createElement("b");
+    lis.innerHTML="第"+(i+1)+"名"+": "+data[i][0];
+    bs.innerHTML=data[i][1];
+    lis.appendChild(bs);
+    resort.appendChild(lis);
+  }
+};
+
+/*设置一个处理函数，完成对上面数据的提取、处理和渲染*/
+function Handle(){
+  var aqiData=getData();
+  aqiData=sortData(aqiData);
+  render(aqiData);
+};
+
+/*给按钮绑定事件，点击触发上面的处理函数*/
+function init(){
+  var btn=document.querySelector("#sort-btn");
+  btn.onclick=function(){
+    Handle();  
+  }
+};
+
+init();
+
+</script>
+</body>
+</html>
