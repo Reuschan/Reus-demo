@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+  ul li{
+  	width:50px;
+  	height:30px;
+  	text-align:center;
+  	display:inline-block;
+  	margin-left:5px;
+  	line-height:30px;
+  	list-style: none;
+  	background-color:red;
+  	color:#fff;
+  	cursor:pointer;
+  }
+  </style>
+</head>
+
+
+<body>
+
+  <input type="text" placeholder="请输入正确的数字" class="num">
+  <input type="button" value="左侧入" class="leftIn">
+  <input type="button" value="左侧出" class="leftOut">
+  <input type="button" value="右侧入" class="rightIn">
+  <input type="button" value="右侧出" class="rightOut">
+  <div>
+    <ul class="result"></ul>
+  </div>
+
+<script type="text/javascript">
+window.onload=function(){
+  	var num=document.querySelector(".num");
+  	var leftIn=document.querySelector(".leftIn");
+  	var leftOut=document.querySelector(".leftOut");
+  	var rightIn=document.querySelector(".rightIn");
+  	var rightOut=document.querySelector(".rightOut");
+  	var result=document.querySelector(".result");
+  	
+  	function add(direction){
+  		if(num.value==""){    //判断是否输入为空
+  			alert("您还没有输入！");    
+  		}else if(isNaN(num.value)){   //判断是否输入非数字
+  			alert("请输入正确的数字！")
+  			num.value="";
+  		}else{
+  			var lis=document.createElement("li");
+  		    lis.innerHTML=num.value;
+  		    num.value="";
+  			if(direction==="left"){     //从首部插入数字
+  			   result.insertBefore(lis,result.firstChild);
+  			}
+  			else if(direction==="right"){  //从尾部插入数字
+  			   result.appendChild(lis);
+  			}
+  		}
+  	}
+
+  	function del(direction){
+  		var list=result.getElementsByTagName("li");
+  		if(list.length>0){
+  			if(direction==="left"){   //从首部删除数字
+  			   alert("删除数字；"+result.firstChild.innerText+" !")
+               result.removeChild(result.firstChild);
+            }else if(direction==="right"){  //从尾部删除数字
+               alert("删除数字；"+result.lastChild.innerText+" !")
+               result.removeChild(result.lastChild);	 
+            }
+  		}if(list.length<=0){
+  			alert("不能再删了！");
+  		}
+  	}
+
+  	leftIn.onclick=function(){
+  		add("left");
+  	}
+
+  	rightIn.onclick=function(){
+  		add("right");
+  	}
+
+  	leftOut.onclick=function(){
+  		del("left");
+  	}
+
+  	rightOut.onclick=function(){
+  		del("right");	
+  	}
+
+  	result.onclick=function(){  //事件代理，删除选中的元素
+  		result.removeChild(event.target);
+  	}
+  	
+
+}
+</script>
+
+</body>
+</html>
